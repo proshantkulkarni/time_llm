@@ -11,6 +11,7 @@ d_ff=128
 
 comment='TimeLLM-ETTh1'
 
+export CUDA_VISIBLE_DEVICES= 4,5,6
 accelerate launch --multi_gpu --mixed_precision bf16 --num_processes $num_process --main_process_port $master_port run_main.py \
   --task_name long_term_forecast \
   --is_training 1 \
